@@ -16,10 +16,12 @@ class UnitTest extends TestCase
      */
     public function testExample()
     {
-
-        $user = User::find(1);
-        $user->name = 'Steve Smith';
-        $this->assertTrue($user->save());
+        $user = new  User();
+        $user->name = "Dhawal";
+        $user->email = "Dhawal@gmail.com";
+        $user->password = 'qwerty';
+        $user->save();
+        $this->assertTrue($user->delete());
     }
 
 }
