@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Cars::class, function (Faker $faker) {
+$factory->define(App\car::class, function (Faker $faker) {
     return [
         'year'=> $faker->year('2018'),
         'model'=> $faker->name(),
