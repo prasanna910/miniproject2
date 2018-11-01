@@ -22,3 +22,4 @@ Route::get('/', function () {
     Route::get('/contact', 'ContactController@contact')->name('contact');
     Route::post('/contact', 'ContactController@store')->name('contact.store');
     Route::get('/thanks/{name}', 'ContactController@thankyou')->name('thankyou');
+    Route::get('/about', 'AboutController@about')->name('about');
