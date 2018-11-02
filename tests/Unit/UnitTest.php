@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\car;
 use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -45,4 +46,22 @@ class UnitTest extends TestCase
         $user->password = "123456";
         $this->assertTrue($user->save());
     }
+
+    public function testUpdateCar()
+    {
+        $cars = car::find(1);
+        $cars->year = '1990';
+        $this->assertTrue($cars->save());
+    }
+    public function testInsertCar()
+    {
+        $cars= new car();
+        $cars->make = 'Honda';
+        $cars->model = 'City';
+        $cars->year = '2009';
+        $this->assertTrue($cars->save());
+    }
+
+
+
 }
