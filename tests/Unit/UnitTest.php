@@ -68,6 +68,12 @@ class UnitTest extends TestCase
         $cars->save();
         $this->assertTrue($cars->delete());
     }
+    public function testDataTypeCar()
+    {
+        $cars = car::inRandomOrder()->first();
+        $year = (int)$cars->Year;
+        $this->assertInternalType("int", $year);
+    }
     public function testInsertCar()
     {
         $cars= new car();
@@ -76,6 +82,7 @@ class UnitTest extends TestCase
         $cars->year = '2009';
         $this->assertTrue($cars->save());
     }
+
 
 
 
