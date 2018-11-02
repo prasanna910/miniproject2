@@ -14,6 +14,7 @@ class UnitTest extends TestCase
      *
      * @return void
      */
+
     public function testUpdate()
     {
         $user = User::find(1);
@@ -35,5 +36,13 @@ class UnitTest extends TestCase
         $recordsCount = $user->count();
         $this->assertEquals(50, $recordsCount);
     }
+    public function testInsertUser()
+    {
 
+        $user = new User();
+        $user->name = "Prasanna Patil";
+        $user->email = "prasanna@gmail.com";
+        $user->password = "123456";
+        $this->assertTrue($user->save());
+    }
 }
