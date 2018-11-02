@@ -24,12 +24,12 @@ class UnitTest extends TestCase
     }
     public function testDelete()
     {
-         $user = new  User();
-         $user->name = "Dhawal";
-         $user->email = "Dhawal@gmail.com";
-         $user->password = 'qwerty';
-         $user->save();
-         $this->assertTrue($user->delete());
+        $user = new  User();
+        $user->name = "Dhawal";
+        $user->email = "Dhawal@gmail.com";
+        $user->password = 'qwerty';
+        $user->save();
+        $this->assertTrue($user->delete());
     }
     public function testCount()
     {
@@ -37,6 +37,7 @@ class UnitTest extends TestCase
         $recordsCount = $user->count();
         $this->assertEquals(50, $recordsCount);
     }
+
     public function testInsertUser()
     {
 
@@ -46,18 +47,11 @@ class UnitTest extends TestCase
         $user->password = "123456";
         $this->assertTrue($user->save());
     }
-
     public function testUpdateCar()
     {
         $cars = car::find(1);
-        $cars->year = '1990';
+        $cars->year = '2000';
         $this->assertTrue($cars->save());
-    }
-    public function testCountCar()
-    {
-        $cars = car::all();
-        $carRecordsCount = $cars->count();
-        $this->assertEquals(50,$carRecordsCount);
     }
     public function testDeleteCar()
     {
@@ -67,6 +61,12 @@ class UnitTest extends TestCase
         $cars->year = '2009';
         $cars->save();
         $this->assertTrue($cars->delete());
+    }
+    public function testCountCar()
+    {
+        $cars = car::all();
+        $carRecordsCount = $cars->count();
+        $this->assertEquals(50,$carRecordsCount);
     }
     public function testDataTypeCar()
     {
@@ -93,8 +93,5 @@ class UnitTest extends TestCase
         $cars->year = '2009';
         $this->assertTrue($cars->save());
     }
-
-
-
 
 }
